@@ -1,0 +1,60 @@
+[data-hint] { position: relative; display: inline-block }
+
+[data-hint]:before, [data-hint]:after { position: absolute; visibility: hidden; opacity: 0; z-index: 1000000; pointer-events: none; }
+
+[data-hint]:hover:before, [data-hint]:hover:after { visibility: visible; opacity: 1 }
+
+.data_hint_disable[data-hint]:after, .over_shown[data-hint]:after, .data_hint_disable[data-hint]:before, .over_shown[data-hint]:before { opacity: 0 }
+
+[data-hint]:before { content: ''; position: absolute; background: transparent; border: 6px solid transparent; z-index: 1000001 }
+
+[data-hint]:after { content: attr(data-hint); background: inherit; color: #fff; padding: 6px 8px; font-size: 11px; text-indent: 0; line-height: 12px; white-space: nowrap; border-radius: 4px; font-weight: bold; font-style: normal }
+
+.hint-t:before { border-top-color: inherit }
+
+.hint-b:before { border-bottom-color: inherit }
+
+.hint-l:before { border-left-color: inherit }
+
+.hint-r:before { border-right-color: inherit }
+
+.hint-t:before { margin-bottom: -12px; margin-left: -6px }
+
+.hint-t:after { margin-left: -18px }
+
+.hint-t:before, .hint-t:after { bottom: 100%; left: 50% }
+
+.hint-t:after, .hint-t:before { -webkit-transform: translateY(-8px); transform: translateY(-8px) }
+
+.hint-b:before { margin-top: -12px; margin-left: -6px }
+
+.hint-b:after { margin-left: -18px }
+
+.hint-b:before, .hint-b:after { top: 100%; left: 50% }
+
+.hint-b:after, .hint-b:before { -webkit-transform: translateY(8px); transform: translateY(8px) }
+
+.hint-r:before { margin-left: -12px; margin-bottom: -6px }
+
+.hint-r:after { margin-bottom: -12px }
+
+.hint-r:before, .hint-r:after { left: 100%; bottom: 50% }
+
+.hint-r:after, .hint-r:before { -webkit-transform: translateX(8px); transform: translateX(8px) }
+
+.hint-l:before { margin-right: -12px; margin-bottom: -6px }
+
+.hint-l:after { margin-bottom: -12px }
+
+.hint-l:before, .hint-l:after { right: 100%; bottom: 50% }
+
+.hint-l:after, .hint-l:before { -webkit-transform: translateX(-8px); transform: translateX(-8px) }
+
+.hint-align-r:after { margin-left: 0; margin-right: -18px; left: auto; right: 50% }
+
+.hover_block {
+    /* когда таскаешь график, то сильно тормозят hover-эффекты (подсветка точек не графике); решение - в создании псевдоэлемента, */
+    /* который будет появляется во время таскания над всеми - он невидимый, так как прозрачный, но перехватывает все ховеры */
+    position: fixed; left: 0; right: 0; top: 0; bottom: 0; z-index: 10000;
+    background: transparent;
+}

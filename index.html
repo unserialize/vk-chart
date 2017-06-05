@@ -5,8 +5,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
     <link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
     <link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+    <!-- build-файлы тоже включены в git, чтобы работало на github pages без процесса сборки -->
     <link rel="stylesheet" href="build/all.css">
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="src/drag_light.js"></script>
     <script src="build/all.js"></script>
     <script>
         window.onload = function() {
@@ -16,10 +18,42 @@
 </head>
 <body>
 
-<div class="container">
-    <h1>demo</h1>
-    <div id="demo"></div>
+
+<div id="example1" class="container example" style="margin-bottom: 140px;">
+
+    <h3 style="margin-top: 10px;">Графики, как в vk</h3>
+    <p>
+        В некоторых проектах нам нужно было отображать графики, очень похожие по виду и поведению на vk-шные.<br>
+        Решил выложить код с этой демкой.
+    </p>
+    <p>
+        Акцент при реализации — чтобы без проблем рендерил несколько серий по нескольку тысяч точек в каждой, и
+        чтобы при этом не тормозили hover-события, таскание и т.п. А также — чтобы код хорошо сжимался.
+    </p>
+
+    <div style="float: right;font-size: 12px;text-align: right">
+        <div>За: <b class="scale_period"></b></div>
+        <div>Сумма на графике 1: <b class="sum1"></b></div>
+        <div>Сумма на графике 2: <b class="sum2"></b></div>
+    </div>
+
+    <div class="demo-container">
+        <div class="chart">
+            <canvas></canvas>
+        </div>
+        <div class="chart-preview">
+            <canvas></canvas>
+            <div class="cp-overlay cpo-l"></div>
+            <div class="cp-overlay cpo-r"></div>
+            <div class="cp-wnd">
+                <div class="cp-resize cpr-l"></div>
+                <div class="cp-resize cpr-r"></div>
+            </div>
+            <div class="area_select" style="display: none"></div>
+        </div>
+    </div>
 </div>
+
 
 </body>
 </html>
