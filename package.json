@@ -1,0 +1,29 @@
+{
+  "name": "vk-chart",
+  "version": "1.0.0",
+  "description": "Canvas-drawn line chart that looks and behaves like vk.com charts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/intmainreturn0/vk-chart.git"
+  },
+  "author": "inv",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/intmainreturn0/vk-chart/issues"
+  },
+  "homepage": "https://github.com/intmainreturn0/vk-chart#readme",
+  "devDependencies": {
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.5",
+    "ts-loader": "^2.1.0",
+    "typescript": "^2.3.4",
+    "typings": "^2.1.1",
+    "webpack": "^2.6.1"
+  }
+}
